@@ -45,8 +45,5 @@ public class Set extends es.upm.oeg.librairy.api.facade.model.avro.Set{
         return super.getItems();
     }
 
-//    @ApiModelProperty(value = "request date")
-//    public List<Item> getItemList() {return super.getItems().stream().map(i -> new Item(i)).collect(Collectors.toList());}
-
 
 }

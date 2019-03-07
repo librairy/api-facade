@@ -51,7 +51,11 @@ public class DocumentsRequest extends es.upm.oeg.librairy.api.facade.model.avro.
 
     public boolean isValid(){
         if (Strings.isNullOrEmpty(getContactEmail())) return false;
-        return getDataSource().isValid();
+
+        if (get("dataSource") == null) return false;
+        if (!getDataSource().isValid()) return false;
+
+        return true;
     }
 
 }

@@ -55,8 +55,12 @@ public class SetRequest extends es.upm.oeg.librairy.api.facade.model.avro.SetReq
     }
 
     public boolean isValid(){
+        if (get("reference") == null) return false;
         if (!getReference().isValid()) return false;
+
+        if (get("dataSource") == null) return false;
         if (!getDataSource().isValid()) return false;
+
         return true;
     }
 

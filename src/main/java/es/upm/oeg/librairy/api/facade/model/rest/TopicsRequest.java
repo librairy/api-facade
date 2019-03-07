@@ -86,9 +86,10 @@ public class TopicsRequest extends es.upm.oeg.librairy.api.facade.model.avro.Top
         if (Strings.isNullOrEmpty(getContactEmail())) return false;
         if (Strings.isNullOrEmpty(getVersion())) return false;
 
-        if (get("from") == null) return false;
+        if (get("dataSource") == null) return false;
+        if (!getDataSource().isValid()) return false;
 
-        return getDataSource().isValid();
+        return true;
 
 
     }

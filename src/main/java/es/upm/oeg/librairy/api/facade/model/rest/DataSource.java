@@ -90,7 +90,9 @@ public class DataSource extends es.upm.oeg.librairy.api.facade.model.avro.DataSo
 
     public boolean isValid(){
         if (Strings.isNullOrEmpty(getUrl())) return false;
-        if (get("fields") == null) return false;
+
+        if (get("dataFields") == null) return false;
+        if (getDataFields() == null) return false;
 
         return getDataFields().isValid();
     }

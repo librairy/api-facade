@@ -65,7 +65,11 @@ public class AnnotationsRequest extends es.upm.oeg.librairy.api.facade.model.avr
 
         if (Strings.isNullOrEmpty(getModelEndpoint())) return false;
         if (Strings.isNullOrEmpty(getContactEmail())) return false;
+
+        if (get("dataSource") == null) return false;
         if (!getDataSource().isValid()) return false;
+
+        if (get("dataSink") == null) return false;
         if (!getDataSink().isValid()) return false;
 
         return true;
