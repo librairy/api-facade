@@ -1,4 +1,4 @@
-package org.librairy.service.learner.facade.rest.model;
+package es.upm.oeg.librairy.api.facade.model.rest;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -8,15 +8,14 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.librairy.service.ApiModelPropertyExtended;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 
 /**
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Credentials extends org.librairy.service.learner.facade.model.Credentials{
+public class Credentials extends es.upm.oeg.librairy.api.facade.model.avro.Credentials{
 
-    public Credentials(org.librairy.service.learner.facade.model.Credentials credentials){
+    public Credentials(es.upm.oeg.librairy.api.facade.model.avro.Credentials credentials){
         try {
             BeanUtils.copyProperties(this,credentials);
         } catch (IllegalAccessException e) {

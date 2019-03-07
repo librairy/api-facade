@@ -1,4 +1,4 @@
-package org.librairy.service.learner.facade.rest.model;
+package es.upm.oeg.librairy.api.facade.model.rest;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -15,9 +15,9 @@ import java.util.Map;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class TopicsRequest extends org.librairy.service.learner.facade.model.TopicsRequest{
+public class TopicsRequest extends es.upm.oeg.librairy.api.facade.model.avro.TopicsRequest{
 
-    public TopicsRequest(org.librairy.service.learner.facade.model.TopicsRequest topicsRequest){
+    public TopicsRequest(es.upm.oeg.librairy.api.facade.model.avro.TopicsRequest topicsRequest){
         try {
             BeanUtils.copyProperties(this,topicsRequest);
         } catch (IllegalAccessException e) {
@@ -76,8 +76,8 @@ public class TopicsRequest extends org.librairy.service.learner.facade.model.Top
 
     @Override
     @ApiModelProperty(value = "data source")
-    public DataSource getFrom() {
-        return new DataSource(super.getFrom());
+    public DataSource getDataSource() {
+        return new DataSource(super.getDataSource());
     }
 
     public boolean isValid(){
@@ -88,7 +88,7 @@ public class TopicsRequest extends org.librairy.service.learner.facade.model.Top
 
         if (get("from") == null) return false;
 
-        return getFrom().isValid();
+        return getDataSource().isValid();
 
 
     }

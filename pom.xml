@@ -237,7 +237,7 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>${project.basedir}/src/main/java/org/librairy/service/learner/facade/model</directory>
+                            <directory>${project.basedir}/src/main/java/es/upm/oeg/librairy/api/facade/model/avro</directory>
                             <includes>
                                 <include>**</include>
                             </includes>
@@ -318,7 +318,7 @@
                             <branch>refs/heads/mvn-repo</branch>
                             <includes><include>**/*</include></includes>
                             <merge>true</merge>
-                            <repositoryName>${project.artifactId}</repositoryName>
+                            <repositoryName>api-facade</repositoryName>
                             <repositoryOwner>librairy</repositoryOwner>
                             <server>github</server>
                         </configuration>

@@ -1,4 +1,4 @@
-package org.librairy.service.learner.facade.rest.model;
+package es.upm.oeg.librairy.api.facade.model.rest;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModelProperty;

@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package org.librairy.service.learner.facade.model;  
+package es.upm.oeg.librairy.api.facade.model.avro;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Credentials extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Credentials\",\"namespace\":\"org.librairy.service.learner.facade.model\",\"fields\":[{\"name\":\"user\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"password\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"apikey\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Credentials\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"user\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"password\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"apikey\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private java.lang.String user;
    private java.lang.String password;
@@ -96,18 +96,18 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
   }
 
   /** Creates a new Credentials RecordBuilder */
-  public static org.librairy.service.learner.facade.model.Credentials.Builder newBuilder() {
-    return new org.librairy.service.learner.facade.model.Credentials.Builder();
+  public static es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder newBuilder() {
+    return new es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder();
   }
   
   /** Creates a new Credentials RecordBuilder by copying an existing Builder */
-  public static org.librairy.service.learner.facade.model.Credentials.Builder newBuilder(org.librairy.service.learner.facade.model.Credentials.Builder other) {
-    return new org.librairy.service.learner.facade.model.Credentials.Builder(other);
+  public static es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder other) {
+    return new es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder(other);
   }
   
   /** Creates a new Credentials RecordBuilder by copying an existing Credentials instance */
-  public static org.librairy.service.learner.facade.model.Credentials.Builder newBuilder(org.librairy.service.learner.facade.model.Credentials other) {
-    return new org.librairy.service.learner.facade.model.Credentials.Builder(other);
+  public static es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.Credentials other) {
+    return new es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder(other);
   }
   
   /**
@@ -122,11 +122,11 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
 
     /** Creates a new Builder */
     private Builder() {
-      super(org.librairy.service.learner.facade.model.Credentials.SCHEMA$);
+      super(es.upm.oeg.librairy.api.facade.model.avro.Credentials.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(org.librairy.service.learner.facade.model.Credentials.Builder other) {
+    private Builder(es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.user)) {
         this.user = data().deepCopy(fields()[0].schema(), other.user);
@@ -143,8 +143,8 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     }
     
     /** Creates a Builder by copying an existing Credentials instance */
-    private Builder(org.librairy.service.learner.facade.model.Credentials other) {
-            super(org.librairy.service.learner.facade.model.Credentials.SCHEMA$);
+    private Builder(es.upm.oeg.librairy.api.facade.model.avro.Credentials other) {
+            super(es.upm.oeg.librairy.api.facade.model.avro.Credentials.SCHEMA$);
       if (isValidValue(fields()[0], other.user)) {
         this.user = data().deepCopy(fields()[0].schema(), other.user);
         fieldSetFlags()[0] = true;
@@ -165,7 +165,7 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     }
     
     /** Sets the value of the 'user' field */
-    public org.librairy.service.learner.facade.model.Credentials.Builder setUser(java.lang.String value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder setUser(java.lang.String value) {
       validate(fields()[0], value);
       this.user = value;
       fieldSetFlags()[0] = true;
@@ -178,7 +178,7 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     }
     
     /** Clears the value of the 'user' field */
-    public org.librairy.service.learner.facade.model.Credentials.Builder clearUser() {
+    public es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder clearUser() {
       user = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -190,7 +190,7 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     }
     
     /** Sets the value of the 'password' field */
-    public org.librairy.service.learner.facade.model.Credentials.Builder setPassword(java.lang.String value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder setPassword(java.lang.String value) {
       validate(fields()[1], value);
       this.password = value;
       fieldSetFlags()[1] = true;
@@ -203,7 +203,7 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     }
     
     /** Clears the value of the 'password' field */
-    public org.librairy.service.learner.facade.model.Credentials.Builder clearPassword() {
+    public es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder clearPassword() {
       password = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -215,7 +215,7 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     }
     
     /** Sets the value of the 'apikey' field */
-    public org.librairy.service.learner.facade.model.Credentials.Builder setApikey(java.lang.String value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder setApikey(java.lang.String value) {
       validate(fields()[2], value);
       this.apikey = value;
       fieldSetFlags()[2] = true;
@@ -228,7 +228,7 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     }
     
     /** Clears the value of the 'apikey' field */
-    public org.librairy.service.learner.facade.model.Credentials.Builder clearApikey() {
+    public es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder clearApikey() {
       apikey = null;
       fieldSetFlags()[2] = false;
       return this;

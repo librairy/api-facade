@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package org.librairy.service.learner.facade.model;  
+package es.upm.oeg.librairy.api.facade.model.avro;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DataFields extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DataFields\",\"namespace\":\"org.librairy.service.learner.facade.model\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"labels\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"text\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DataFields\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"labels\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"text\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private java.lang.String id;
    private java.util.List<java.lang.String> labels;
@@ -96,18 +96,18 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
   }
 
   /** Creates a new DataFields RecordBuilder */
-  public static org.librairy.service.learner.facade.model.DataFields.Builder newBuilder() {
-    return new org.librairy.service.learner.facade.model.DataFields.Builder();
+  public static es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder newBuilder() {
+    return new es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder();
   }
   
   /** Creates a new DataFields RecordBuilder by copying an existing Builder */
-  public static org.librairy.service.learner.facade.model.DataFields.Builder newBuilder(org.librairy.service.learner.facade.model.DataFields.Builder other) {
-    return new org.librairy.service.learner.facade.model.DataFields.Builder(other);
+  public static es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder other) {
+    return new es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder(other);
   }
   
   /** Creates a new DataFields RecordBuilder by copying an existing DataFields instance */
-  public static org.librairy.service.learner.facade.model.DataFields.Builder newBuilder(org.librairy.service.learner.facade.model.DataFields other) {
-    return new org.librairy.service.learner.facade.model.DataFields.Builder(other);
+  public static es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.DataFields other) {
+    return new es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder(other);
   }
   
   /**
@@ -122,11 +122,11 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
 
     /** Creates a new Builder */
     private Builder() {
-      super(org.librairy.service.learner.facade.model.DataFields.SCHEMA$);
+      super(es.upm.oeg.librairy.api.facade.model.avro.DataFields.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(org.librairy.service.learner.facade.model.DataFields.Builder other) {
+    private Builder(es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -143,8 +143,8 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Creates a Builder by copying an existing DataFields instance */
-    private Builder(org.librairy.service.learner.facade.model.DataFields other) {
-            super(org.librairy.service.learner.facade.model.DataFields.SCHEMA$);
+    private Builder(es.upm.oeg.librairy.api.facade.model.avro.DataFields other) {
+            super(es.upm.oeg.librairy.api.facade.model.avro.DataFields.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -165,7 +165,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Sets the value of the 'id' field */
-    public org.librairy.service.learner.facade.model.DataFields.Builder setId(java.lang.String value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder setId(java.lang.String value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -178,7 +178,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Clears the value of the 'id' field */
-    public org.librairy.service.learner.facade.model.DataFields.Builder clearId() {
+    public es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -190,7 +190,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Sets the value of the 'labels' field */
-    public org.librairy.service.learner.facade.model.DataFields.Builder setLabels(java.util.List<java.lang.String> value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder setLabels(java.util.List<java.lang.String> value) {
       validate(fields()[1], value);
       this.labels = value;
       fieldSetFlags()[1] = true;
@@ -203,7 +203,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Clears the value of the 'labels' field */
-    public org.librairy.service.learner.facade.model.DataFields.Builder clearLabels() {
+    public es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder clearLabels() {
       labels = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -215,7 +215,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Sets the value of the 'text' field */
-    public org.librairy.service.learner.facade.model.DataFields.Builder setText(java.util.List<java.lang.String> value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder setText(java.util.List<java.lang.String> value) {
       validate(fields()[2], value);
       this.text = value;
       fieldSetFlags()[2] = true;
@@ -228,7 +228,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Clears the value of the 'text' field */
-    public org.librairy.service.learner.facade.model.DataFields.Builder clearText() {
+    public es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder clearText() {
       text = null;
       fieldSetFlags()[2] = false;
       return this;

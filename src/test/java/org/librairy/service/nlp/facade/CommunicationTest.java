@@ -1,15 +1,16 @@
 package org.librairy.service.nlp.facade;
 
+import es.upm.oeg.librairy.api.facade.AvroClient;
+import es.upm.oeg.librairy.api.facade.AvroServer;
+import es.upm.oeg.librairy.api.facade.model.avro.*;
 import org.apache.avro.AvroRemoteException;
 import org.junit.Test;
-import org.librairy.service.learner.facade.AvroClient;
-import org.librairy.service.learner.facade.AvroServer;
-import org.librairy.service.learner.facade.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 
 /**
@@ -23,17 +24,32 @@ public class CommunicationTest {
     public void exchange() throws InterruptedException, IOException {
 
 
-        LearnerService customService = new LearnerService() {
+        LibrairyApi customService = new LibrairyApi() {
 
 
             @Override
-            public Result createTopics(TopicsRequest request) throws AvroRemoteException {
-                return Result.newBuilder().setDate(new Date().toString()).setStatus("QUEUED").setMessage("new topic model queued").build();
+            public Task createTopics(TopicsRequest request) throws AvroRemoteException {
+                return Task.newBuilder().setDate(new Date().toString()).setStatus("QUEUED").setMessage("new topic model queued").build();
             }
 
             @Override
-            public Result cleanCache() throws AvroRemoteException {
-                return Result.newBuilder().setDate(new Date().toString()).setStatus("ACCEPTED").setMessage("cache removed").build();
+            public Task createAnnotations(AnnotationsRequest request) throws AvroRemoteException {
+                return Task.newBuilder().setDate(new Date().toString()).setStatus("QUEUED").setMessage("annotation tasks queued").build();
+            }
+
+            @Override
+            public Task createDocuments(DocumentsRequest request) throws AvroRemoteException {
+                return Task.newBuilder().setDate(new Date().toString()).setStatus("QUEUED").setMessage("adding documents queued").build();
+            }
+
+            @Override
+            public Set getSet(SetRequest request) throws AvroRemoteException {
+                return Set.newBuilder().setItems(Collections.emptyList()).build();
+            }
+
+            @Override
+            public Task cleanCache() throws AvroRemoteException {
+                return Task.newBuilder().setDate(new Date().toString()).setStatus("ACCEPTED").setMessage("cache removed").build();
             }
         };
         AvroServer server = new AvroServer(customService);
@@ -53,12 +69,12 @@ public class CommunicationTest {
                 .setDescription("test model")
                 .setContactEmail("sample@mail.com")
                 .setVersion("1.0")
-                .setFrom(
+                .setDataSource(
                         DataSource.newBuilder()
                                 .setUrl("/src/test/resources/sample.csv")
                                 .setSize(-1)
-                                .setFormat(Format.CSV)
-                                .setFields(
+                                .setFormat(ReaderFormat.CSV)
+                                .setDataFields(
                                         DataFields.newBuilder()
                                                 .setId("id")
                                                 .setText(Arrays.asList("title","content"))
@@ -69,6 +85,49 @@ public class CommunicationTest {
                 )
                 .build());
         client.cleanCache();
+
+        client.createDocuments(DocumentsRequest.newBuilder()
+                .setContactEmail("sample@gmail.com")
+                .setDataSource(
+                        DataSource.newBuilder()
+                                .setUrl("/src/test/resources/sample.csv")
+                                .setSize(-1)
+                                .setFormat(ReaderFormat.CSV)
+                                .setDataFields(
+                                        DataFields.newBuilder()
+                                                .setId("id")
+                                                .setText(Arrays.asList("title","content"))
+                                                .build()
+                                )
+                                .build()
+                )
+                .setDataSink(
+                        DataSink.newBuilder()
+                                .setUrl("/src/test/resources/sample.csv")
+                                .setFormat(WriterFormat.SOLR_CORE)
+                                .build()
+                )
+                .build());
+
+        client.getSet(SetRequest.newBuilder()
+                .setReference(
+                        Reference.newBuilder().setId("doc1").build()
+                )
+                .setSize(5)
+                .setDataSource(
+                        DataSource.newBuilder()
+                                .setUrl("/src/test/resources/sample.csv")
+                                .setSize(-1)
+                                .setFormat(ReaderFormat.CSV)
+                                .setDataFields(
+                                        DataFields.newBuilder()
+                                                .setId("id")
+                                                .setText(Arrays.asList("title","content"))
+                                                .build()
+                                )
+                                .build()
+                )
+                .build());
 
         client.close();
         server.close();

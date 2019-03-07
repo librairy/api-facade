@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package org.librairy.service.learner.facade.model;  
+package es.upm.oeg.librairy.api.facade.model.avro;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class Result extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Result\",\"namespace\":\"org.librairy.service.learner.facade.model\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"status\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"message\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"thanks for using librAIry\"}]}");
+public class Task extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Task\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"status\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"message\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"thanks for using librAIry\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private java.lang.String date;
    private java.lang.String status;
@@ -18,12 +18,12 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>. 
    */
-  public Result() {}
+  public Task() {}
 
   /**
    * All-args constructor.
    */
-  public Result(java.lang.String date, java.lang.String status, java.lang.String message) {
+  public Task(java.lang.String date, java.lang.String status, java.lang.String message) {
     this.date = date;
     this.status = status;
     this.message = message;
@@ -95,26 +95,26 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
     this.message = value;
   }
 
-  /** Creates a new Result RecordBuilder */
-  public static org.librairy.service.learner.facade.model.Result.Builder newBuilder() {
-    return new org.librairy.service.learner.facade.model.Result.Builder();
+  /** Creates a new Task RecordBuilder */
+  public static es.upm.oeg.librairy.api.facade.model.avro.Task.Builder newBuilder() {
+    return new es.upm.oeg.librairy.api.facade.model.avro.Task.Builder();
   }
   
-  /** Creates a new Result RecordBuilder by copying an existing Builder */
-  public static org.librairy.service.learner.facade.model.Result.Builder newBuilder(org.librairy.service.learner.facade.model.Result.Builder other) {
-    return new org.librairy.service.learner.facade.model.Result.Builder(other);
+  /** Creates a new Task RecordBuilder by copying an existing Builder */
+  public static es.upm.oeg.librairy.api.facade.model.avro.Task.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.Task.Builder other) {
+    return new es.upm.oeg.librairy.api.facade.model.avro.Task.Builder(other);
   }
   
-  /** Creates a new Result RecordBuilder by copying an existing Result instance */
-  public static org.librairy.service.learner.facade.model.Result.Builder newBuilder(org.librairy.service.learner.facade.model.Result other) {
-    return new org.librairy.service.learner.facade.model.Result.Builder(other);
+  /** Creates a new Task RecordBuilder by copying an existing Task instance */
+  public static es.upm.oeg.librairy.api.facade.model.avro.Task.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.Task other) {
+    return new es.upm.oeg.librairy.api.facade.model.avro.Task.Builder(other);
   }
   
   /**
-   * RecordBuilder for Result instances.
+   * RecordBuilder for Task instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Result>
-    implements org.apache.avro.data.RecordBuilder<Result> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Task>
+    implements org.apache.avro.data.RecordBuilder<Task> {
 
     private java.lang.String date;
     private java.lang.String status;
@@ -122,11 +122,11 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
 
     /** Creates a new Builder */
     private Builder() {
-      super(org.librairy.service.learner.facade.model.Result.SCHEMA$);
+      super(es.upm.oeg.librairy.api.facade.model.avro.Task.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(org.librairy.service.learner.facade.model.Result.Builder other) {
+    private Builder(es.upm.oeg.librairy.api.facade.model.avro.Task.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
@@ -142,9 +142,9 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
       }
     }
     
-    /** Creates a Builder by copying an existing Result instance */
-    private Builder(org.librairy.service.learner.facade.model.Result other) {
-            super(org.librairy.service.learner.facade.model.Result.SCHEMA$);
+    /** Creates a Builder by copying an existing Task instance */
+    private Builder(es.upm.oeg.librairy.api.facade.model.avro.Task other) {
+            super(es.upm.oeg.librairy.api.facade.model.avro.Task.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
         fieldSetFlags()[0] = true;
@@ -165,7 +165,7 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Sets the value of the 'date' field */
-    public org.librairy.service.learner.facade.model.Result.Builder setDate(java.lang.String value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.Task.Builder setDate(java.lang.String value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -178,7 +178,7 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Clears the value of the 'date' field */
-    public org.librairy.service.learner.facade.model.Result.Builder clearDate() {
+    public es.upm.oeg.librairy.api.facade.model.avro.Task.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -190,7 +190,7 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Sets the value of the 'status' field */
-    public org.librairy.service.learner.facade.model.Result.Builder setStatus(java.lang.String value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.Task.Builder setStatus(java.lang.String value) {
       validate(fields()[1], value);
       this.status = value;
       fieldSetFlags()[1] = true;
@@ -203,7 +203,7 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Clears the value of the 'status' field */
-    public org.librairy.service.learner.facade.model.Result.Builder clearStatus() {
+    public es.upm.oeg.librairy.api.facade.model.avro.Task.Builder clearStatus() {
       status = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -215,7 +215,7 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Sets the value of the 'message' field */
-    public org.librairy.service.learner.facade.model.Result.Builder setMessage(java.lang.String value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.Task.Builder setMessage(java.lang.String value) {
       validate(fields()[2], value);
       this.message = value;
       fieldSetFlags()[2] = true;
@@ -228,16 +228,16 @@ public class Result extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Clears the value of the 'message' field */
-    public org.librairy.service.learner.facade.model.Result.Builder clearMessage() {
+    public es.upm.oeg.librairy.api.facade.model.avro.Task.Builder clearMessage() {
       message = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
     @Override
-    public Result build() {
+    public Task build() {
       try {
-        Result record = new Result();
+        Task record = new Task();
         record.date = fieldSetFlags()[0] ? this.date : (java.lang.String) defaultValue(fields()[0]);
         record.status = fieldSetFlags()[1] ? this.status : (java.lang.String) defaultValue(fields()[1]);
         record.message = fieldSetFlags()[2] ? this.message : (java.lang.String) defaultValue(fields()[2]);

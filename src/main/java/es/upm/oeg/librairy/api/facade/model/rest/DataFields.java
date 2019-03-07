@@ -1,4 +1,4 @@
-package org.librairy.service.learner.facade.rest.model;
+package es.upm.oeg.librairy.api.facade.model.rest;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -15,9 +15,9 @@ import java.util.List;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class DataFields extends org.librairy.service.learner.facade.model.DataFields{
+public class DataFields extends es.upm.oeg.librairy.api.facade.model.avro.DataFields{
 
-    public DataFields(org.librairy.service.learner.facade.model.DataFields dataFields){
+    public DataFields(es.upm.oeg.librairy.api.facade.model.avro.DataFields dataFields){
         try {
             BeanUtils.copyProperties(this,dataFields);
         } catch (IllegalAccessException e) {

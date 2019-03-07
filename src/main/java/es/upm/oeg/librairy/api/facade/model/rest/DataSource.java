@@ -1,13 +1,13 @@
-package org.librairy.service.learner.facade.rest.model;
+package es.upm.oeg.librairy.api.facade.model.rest;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.google.common.base.Strings;
+import es.upm.oeg.librairy.api.facade.model.avro.ReaderFormat;
 import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
 import org.librairy.service.ApiModelPropertyExtended;
-import org.librairy.service.learner.facade.model.Format;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -15,9 +15,9 @@ import java.lang.reflect.InvocationTargetException;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class DataSource extends org.librairy.service.learner.facade.model.DataSource{
+public class DataSource extends es.upm.oeg.librairy.api.facade.model.avro.DataSource{
 
-    public DataSource(org.librairy.service.learner.facade.model.DataSource datasource){
+    public DataSource(es.upm.oeg.librairy.api.facade.model.avro.DataSource datasource){
         try {
             BeanUtils.copyProperties(this,datasource);
         } catch (IllegalAccessException e) {
@@ -46,7 +46,7 @@ public class DataSource extends org.librairy.service.learner.facade.model.DataSo
     @Override
     @ApiModelProperty(value = "data format")
     @ApiModelPropertyExtended(defaultValue = "SOLR_CORE")
-    public Format getFormat() {return super.getFormat();}
+    public ReaderFormat getFormat() {return super.getFormat();}
 
     @Override
     @ApiModelProperty(value = "document selection")
@@ -78,8 +78,8 @@ public class DataSource extends org.librairy.service.learner.facade.model.DataSo
 
     @Override
     @ApiModelProperty(value = "document fields")
-    public DataFields getFields() {
-        return new DataFields(super.getFields());
+    public DataFields getDataFields() {
+        return new DataFields(super.getDataFields());
     }
 
     @Override
@@ -92,7 +92,7 @@ public class DataSource extends org.librairy.service.learner.facade.model.DataSo
         if (Strings.isNullOrEmpty(getUrl())) return false;
         if (get("fields") == null) return false;
 
-        return getFields().isValid();
+        return getDataFields().isValid();
     }
 
 }
