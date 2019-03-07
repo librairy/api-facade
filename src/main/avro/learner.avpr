@@ -1,0 +1,53 @@
+{"namespace": "org.librairy.service.learner.facade.model",
+  "protocol": "LearnerService",
+
+
+  "types": [
+    {"name": "Format", "type": "enum","symbols": ["SOLR_CORE","CSV","CSV_TAR_GZ","JSONL","JSONL_TAR_GZ"]},
+    {"name": "Credentials", "type": "record", "fields": [
+      {"name":"user", "type":["null","string"],"default":null},
+      {"name":"password","type":["null","string"],"default":null},
+      {"name":"apikey","type":["null","string"],"default":null}
+    ]},
+    {"name": "DataFields", "type": "record", "fields": [
+      {"name":"id", "type": "string"},
+      {"name":"labels","type":{"type" : "array","items":"string"}, "default": []},
+      {"name":"text","type":{"type" : "array","items":"string"}, "default": []}
+    ]},
+    {"name": "DataSource", "type": "record", "fields": [
+      {"name":"url","type":"string"},
+      {"name":"format","type":"Format"},
+      {"name":"filter", "type": "string", "default": ""},
+      {"name":"size", "type": "long", "default": -1},
+      {"name":"offset", "type": "long", "default": 0},
+      {"name":"cache", "type": "boolean", "default": false},
+      {"name":"credentials", "type":["null","Credentials"], "default": null},
+      {"name":"fields", "type": "DataFields"}
+    ]},
+    {"name": "TopicsRequest", "type": "record", "fields": [
+      {"name":"name","type":"string"},
+      {"name":"description", "type": "string", "default": "created by librAIry"},
+      {"name":"version", "type": "string", "default": "1.0"},
+      {"name":"contactEmail", "type": "string"},
+      {"name":"parameters","type":{"type" : "map","values":"string"}, "default": {}},
+      {"name":"annotate","type":"boolean", "default": false},
+      {"name":"from","type":"DataSource"}
+    ]},
+    {"name": "Result", "type": "record", "fields": [
+      {"name":"date", "type": "string"},
+      {"name":"status","type":"string"},
+      {"name":"message", "type": "string", "default": "thanks for using librAIry"}
+    ]}
+  ],
+
+  "messages": {
+      "createTopics": {
+        "request": [{"name": "request", "type": "TopicsRequest"}],
+        "response": "Result"
+      },
+      "cleanCache": {
+        "request": [],
+        "response": "Result"
+      }
+ }
+}
