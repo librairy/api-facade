@@ -29,8 +29,8 @@ public class DataFields extends es.upm.oeg.librairy.api.facade.model.avro.DataFi
 
     public DataFields(){}
 
-    public DataFields(String id, List<String> labels, List<String> text) {
-        super(id, labels, text);
+    public DataFields(String id, String name, List<String> labels, List<String> text) {
+        super(id, name, labels, text);
     }
 
     @Override
@@ -40,6 +40,7 @@ public class DataFields extends es.upm.oeg.librairy.api.facade.model.avro.DataFi
         return super.getSchema();
     }
 
+
     @Override
     @ApiModelProperty(value = "document id")
     @ApiModelPropertyExtended(defaultValue = "id")
@@ -47,6 +48,12 @@ public class DataFields extends es.upm.oeg.librairy.api.facade.model.avro.DataFi
         return super.getId();
     }
 
+    @Override
+    @ApiModelProperty(value = "document name")
+    @ApiModelPropertyExtended(defaultValue = "title")
+    public String getName() {
+        return super.getName();
+    }
     @Override
     @ApiModelProperty(value = "document labels")
     @ApiModelPropertyExtended(defaultValue = "tags")

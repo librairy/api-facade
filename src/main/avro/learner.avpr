@@ -12,6 +12,7 @@
     ]},
     {"name": "DataFields", "type": "record", "fields": [
       {"name":"id", "type": "string"},
+      {"name":"name", "type":["null","string"],"default":null},
       {"name":"labels","type":{"type" : "array","items":"string"}, "default": []},
       {"name":"text","type":{"type" : "array","items":"string"}, "default": []}
     ]},
