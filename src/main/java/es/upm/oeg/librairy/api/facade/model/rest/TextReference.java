@@ -2,6 +2,7 @@ package es.upm.oeg.librairy.api.facade.model.rest;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.google.common.base.Strings;
 import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
@@ -12,11 +13,11 @@ import java.lang.reflect.InvocationTargetException;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Reference extends es.upm.oeg.librairy.api.facade.model.avro.Reference{
+public class TextReference extends es.upm.oeg.librairy.api.facade.model.avro.TextReference{
 
-    public Reference(es.upm.oeg.librairy.api.facade.model.avro.Reference reference){
+    public TextReference(es.upm.oeg.librairy.api.facade.model.avro.TextReference textReference){
         try {
-            BeanUtils.copyProperties(this,reference);
+            BeanUtils.copyProperties(this,textReference);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
@@ -24,7 +25,11 @@ public class Reference extends es.upm.oeg.librairy.api.facade.model.avro.Referen
         }
     }
 
-    public Reference(){}
+    public TextReference(){}
+
+    public TextReference(String content, String model) {
+        super(content, model);
+    }
 
     @Override
     @ApiModelProperty(hidden = true)
@@ -34,24 +39,19 @@ public class Reference extends es.upm.oeg.librairy.api.facade.model.avro.Referen
     }
 
     @Override
-    @ApiModelProperty(value = "document as reference")
-    public DocReference getDocument() {
-        es.upm.oeg.librairy.api.facade.model.avro.DocReference docRef = super.getDocument();
-        if (docRef == null) return null;
-        return new DocReference(docRef);
+    @ApiModelProperty(value = "free-text")
+    public String getContent() {
+        return super.getContent();
     }
 
     @Override
-    @ApiModelProperty(value = "free-text as reference")
-    public TextReference getText() {
-        es.upm.oeg.librairy.api.facade.model.avro.TextReference textRef = super.getText();
-        if (textRef == null) return null;
-        return new TextReference(textRef);
+    @ApiModelProperty(value = "model API endpoint")
+    public String getModel() {
+        return super.getModel();
     }
 
-
     public boolean isValid(){
-        return (getDocument() != null || getText() != null);
+        return !Strings.isNullOrEmpty(getContent()) && !Strings.isNullOrEmpty(getModel());
     }
 
 }

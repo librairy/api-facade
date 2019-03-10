@@ -7,10 +7,10 @@ package es.upm.oeg.librairy.api.facade.model.avro;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Reference extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Reference\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"text\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Reference\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"document\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DocReference\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}],\"default\":null},{\"name\":\"text\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"TextReference\",\"fields\":[{\"name\":\"content\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"model\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-   private java.lang.String id;
-   private java.lang.String text;
+   private es.upm.oeg.librairy.api.facade.model.avro.DocReference document;
+   private es.upm.oeg.librairy.api.facade.model.avro.TextReference text;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -22,8 +22,8 @@ public class Reference extends org.apache.avro.specific.SpecificRecordBase imple
   /**
    * All-args constructor.
    */
-  public Reference(java.lang.String id, java.lang.String text) {
-    this.id = id;
+  public Reference(es.upm.oeg.librairy.api.facade.model.avro.DocReference document, es.upm.oeg.librairy.api.facade.model.avro.TextReference text) {
+    this.document = document;
     this.text = text;
   }
 
@@ -31,7 +31,7 @@ public class Reference extends org.apache.avro.specific.SpecificRecordBase imple
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return id;
+    case 0: return document;
     case 1: return text;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -40,31 +40,31 @@ public class Reference extends org.apache.avro.specific.SpecificRecordBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.String)value$; break;
-    case 1: text = (java.lang.String)value$; break;
+    case 0: document = (es.upm.oeg.librairy.api.facade.model.avro.DocReference)value$; break;
+    case 1: text = (es.upm.oeg.librairy.api.facade.model.avro.TextReference)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'id' field.
+   * Gets the value of the 'document' field.
    */
-  public java.lang.String getId() {
-    return id;
+  public es.upm.oeg.librairy.api.facade.model.avro.DocReference getDocument() {
+    return document;
   }
 
   /**
-   * Sets the value of the 'id' field.
+   * Sets the value of the 'document' field.
    * @param value the value to set.
    */
-  public void setId(java.lang.String value) {
-    this.id = value;
+  public void setDocument(es.upm.oeg.librairy.api.facade.model.avro.DocReference value) {
+    this.document = value;
   }
 
   /**
    * Gets the value of the 'text' field.
    */
-  public java.lang.String getText() {
+  public es.upm.oeg.librairy.api.facade.model.avro.TextReference getText() {
     return text;
   }
 
@@ -72,7 +72,7 @@ public class Reference extends org.apache.avro.specific.SpecificRecordBase imple
    * Sets the value of the 'text' field.
    * @param value the value to set.
    */
-  public void setText(java.lang.String value) {
+  public void setText(es.upm.oeg.librairy.api.facade.model.avro.TextReference value) {
     this.text = value;
   }
 
@@ -97,8 +97,8 @@ public class Reference extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Reference>
     implements org.apache.avro.data.RecordBuilder<Reference> {
 
-    private java.lang.String id;
-    private java.lang.String text;
+    private es.upm.oeg.librairy.api.facade.model.avro.DocReference document;
+    private es.upm.oeg.librairy.api.facade.model.avro.TextReference text;
 
     /** Creates a new Builder */
     private Builder() {
@@ -108,8 +108,8 @@ public class Reference extends org.apache.avro.specific.SpecificRecordBase imple
     /** Creates a Builder by copying an existing Builder */
     private Builder(es.upm.oeg.librairy.api.facade.model.avro.Reference.Builder other) {
       super(other);
-      if (isValidValue(fields()[0], other.id)) {
-        this.id = data().deepCopy(fields()[0].schema(), other.id);
+      if (isValidValue(fields()[0], other.document)) {
+        this.document = data().deepCopy(fields()[0].schema(), other.document);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.text)) {
@@ -121,8 +121,8 @@ public class Reference extends org.apache.avro.specific.SpecificRecordBase imple
     /** Creates a Builder by copying an existing Reference instance */
     private Builder(es.upm.oeg.librairy.api.facade.model.avro.Reference other) {
             super(es.upm.oeg.librairy.api.facade.model.avro.Reference.SCHEMA$);
-      if (isValidValue(fields()[0], other.id)) {
-        this.id = data().deepCopy(fields()[0].schema(), other.id);
+      if (isValidValue(fields()[0], other.document)) {
+        this.document = data().deepCopy(fields()[0].schema(), other.document);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.text)) {
@@ -131,38 +131,38 @@ public class Reference extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
 
-    /** Gets the value of the 'id' field */
-    public java.lang.String getId() {
-      return id;
+    /** Gets the value of the 'document' field */
+    public es.upm.oeg.librairy.api.facade.model.avro.DocReference getDocument() {
+      return document;
     }
     
-    /** Sets the value of the 'id' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.Reference.Builder setId(java.lang.String value) {
+    /** Sets the value of the 'document' field */
+    public es.upm.oeg.librairy.api.facade.model.avro.Reference.Builder setDocument(es.upm.oeg.librairy.api.facade.model.avro.DocReference value) {
       validate(fields()[0], value);
-      this.id = value;
+      this.document = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
     
-    /** Checks whether the 'id' field has been set */
-    public boolean hasId() {
+    /** Checks whether the 'document' field has been set */
+    public boolean hasDocument() {
       return fieldSetFlags()[0];
     }
     
-    /** Clears the value of the 'id' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.Reference.Builder clearId() {
-      id = null;
+    /** Clears the value of the 'document' field */
+    public es.upm.oeg.librairy.api.facade.model.avro.Reference.Builder clearDocument() {
+      document = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
     /** Gets the value of the 'text' field */
-    public java.lang.String getText() {
+    public es.upm.oeg.librairy.api.facade.model.avro.TextReference getText() {
       return text;
     }
     
     /** Sets the value of the 'text' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.Reference.Builder setText(java.lang.String value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.Reference.Builder setText(es.upm.oeg.librairy.api.facade.model.avro.TextReference value) {
       validate(fields()[1], value);
       this.text = value;
       fieldSetFlags()[1] = true;
@@ -185,8 +185,8 @@ public class Reference extends org.apache.avro.specific.SpecificRecordBase imple
     public Reference build() {
       try {
         Reference record = new Reference();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.String) defaultValue(fields()[0]);
-        record.text = fieldSetFlags()[1] ? this.text : (java.lang.String) defaultValue(fields()[1]);
+        record.document = fieldSetFlags()[0] ? this.document : (es.upm.oeg.librairy.api.facade.model.avro.DocReference) defaultValue(fields()[0]);
+        record.text = fieldSetFlags()[1] ? this.text : (es.upm.oeg.librairy.api.facade.model.avro.TextReference) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

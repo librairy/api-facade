@@ -31,9 +31,16 @@
       {"name":"format","type":"WriterFormat"},
       {"name":"credentials", "type":["null","Credentials"], "default": null}
     ]},
+    {"name": "DocReference", "type": "record", "fields": [
+      {"name":"id",  "type":"string"}
+    ]},
+    {"name": "TextReference", "type": "record", "fields": [
+      {"name":"content",  "type":"string"},
+      {"name":"model",  "type":"string"}
+    ]},
     {"name": "Reference", "type": "record", "fields": [
-      {"name":"id",  "type":["null","string"], "default": null},
-      {"name":"text", "type":["null","string"], "default": null}
+      {"name":"document",  "type":["null","DocReference"], "default": null},
+      {"name":"text", "type":["null","TextReference"], "default": null}
     ]},
     {"name": "SetRequest", "type": "record", "fields": [
       {"name":"reference", "type": "Reference"},
@@ -90,7 +97,7 @@
         "request": [{"name": "request", "type": "DocumentsRequest"}],
         "response": "Task"
       },
-      "getSet": {
+      "createSet": {
         "request": [{"name": "request", "type": "SetRequest"}],
         "response": "Set"
       },

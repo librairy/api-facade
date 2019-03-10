@@ -56,10 +56,10 @@ public class AvroClient {
         return result;
     }
 
-    public Set getSet(SetRequest request) throws AvroRemoteException {
+    public Set createSet(SetRequest request) throws AvroRemoteException {
 
-        LOG.debug("Calling proxy.getSet");
-        Set result= proxy.getSet(request);
+        LOG.debug("Calling proxy.createSet");
+        Set result= proxy.createSet(request);
         LOG.debug("Result: " + result);
         return result;
     }

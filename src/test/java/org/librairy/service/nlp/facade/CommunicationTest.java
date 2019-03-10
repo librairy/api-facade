@@ -39,11 +39,11 @@ public class CommunicationTest {
 
             @Override
             public Task createDocuments(DocumentsRequest request) throws AvroRemoteException {
-                return Task.newBuilder().setDate(new Date().toString()).setStatus("QUEUED").setMessage("adding documents queued").build();
+                return Task.newBuilder().setDate(new Date().toStrgit stating()).setStatus("QUEUED").setMessage("adding documents queued").build();
             }
 
             @Override
-            public Set getSet(SetRequest request) throws AvroRemoteException {
+            public Set createSet(SetRequest request) throws AvroRemoteException {
                 return Set.newBuilder().setItems(Collections.emptyList()).build();
             }
 
@@ -109,9 +109,12 @@ public class CommunicationTest {
                 )
                 .build());
 
-        client.getSet(SetRequest.newBuilder()
+        client.createSet(SetRequest.newBuilder()
                 .setReference(
-                        Reference.newBuilder().setId("doc1").build()
+                        Reference.newBuilder()
+                                .setDocument(
+                                        DocReference.newBuilder().setId("docId").build()
+                                ).build()
                 )
                 .setSize(5)
                 .setDataSource(
