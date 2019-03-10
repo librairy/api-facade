@@ -39,7 +39,7 @@ public class CommunicationTest {
 
             @Override
             public Task createDocuments(DocumentsRequest request) throws AvroRemoteException {
-                return Task.newBuilder().setDate(new Date().toStrgit stating()).setStatus("QUEUED").setMessage("adding documents queued").build();
+                return Task.newBuilder().setDate(new Date().toString()).setStatus("QUEUED").setMessage("adding documents queued").build();
             }
 
             @Override
