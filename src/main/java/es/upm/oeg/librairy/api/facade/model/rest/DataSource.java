@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
 import org.librairy.service.ApiModelPropertyExtended;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -16,6 +18,8 @@ import java.lang.reflect.InvocationTargetException;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DataSource extends es.upm.oeg.librairy.api.facade.model.avro.DataSource{
+
+    private static final Logger LOG = LoggerFactory.getLogger(DataSource.class);
 
     public DataSource(es.upm.oeg.librairy.api.facade.model.avro.DataSource datasource){
         try {
@@ -89,10 +93,15 @@ public class DataSource extends es.upm.oeg.librairy.api.facade.model.avro.DataSo
     }
 
     public boolean isValid(){
-        if (Strings.isNullOrEmpty(getUrl())) return false;
+        if (Strings.isNullOrEmpty(getUrl())) {
+            LOG.warn("Data Source URL is empty");
+            return false;
+        }
 
-        if (get("dataFields") == null) return false;
-        if (getDataFields() == null) return false;
+        if (get("dataFields") == null) {
+            LOG.warn("Data Source FIELDS are empty");
+            return false;
+        }
 
         return getDataFields().isValid();
     }

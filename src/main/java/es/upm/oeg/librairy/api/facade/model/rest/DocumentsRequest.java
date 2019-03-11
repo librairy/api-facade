@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
 import org.librairy.service.ApiModelPropertyExtended;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
@@ -16,6 +18,8 @@ import java.util.Map;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DocumentsRequest extends es.upm.oeg.librairy.api.facade.model.avro.DocumentsRequest{
+
+    private static final Logger LOG = LoggerFactory.getLogger(DocumentsRequest.class);
 
     public DocumentsRequest(es.upm.oeg.librairy.api.facade.model.avro.DocumentsRequest documentsRequest){
         try {
@@ -50,9 +54,15 @@ public class DocumentsRequest extends es.upm.oeg.librairy.api.facade.model.avro.
     }
 
     public boolean isValid(){
-        if (Strings.isNullOrEmpty(getContactEmail())) return false;
+        if (Strings.isNullOrEmpty(getContactEmail())) {
+            LOG.warn("Contact Email is empty");
+            return false;
+        }
 
-        if (get("dataSource") == null) return false;
+        if (get("dataSource") == null) {
+            LOG.warn("Data Source is empty");
+            return false;
+        }
         if (!getDataSource().isValid()) return false;
 
         return true;

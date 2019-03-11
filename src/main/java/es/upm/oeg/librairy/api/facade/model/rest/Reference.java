@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -13,6 +15,8 @@ import java.lang.reflect.InvocationTargetException;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Reference extends es.upm.oeg.librairy.api.facade.model.avro.Reference{
+
+    private static final Logger LOG = LoggerFactory.getLogger(Reference.class);
 
     public Reference(es.upm.oeg.librairy.api.facade.model.avro.Reference reference){
         try {
@@ -51,7 +55,13 @@ public class Reference extends es.upm.oeg.librairy.api.facade.model.avro.Referen
 
 
     public boolean isValid(){
-        return (getDocument() != null || getText() != null);
+
+        if ((getDocument() == null) && ( getText() == null)){
+            LOG.warn("No reference document or text");
+            return false;
+        }
+
+        return true;
     }
 
 }

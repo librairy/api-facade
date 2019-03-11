@@ -6,6 +6,8 @@ import com.google.common.base.Strings;
 import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -14,6 +16,8 @@ import java.lang.reflect.InvocationTargetException;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TextReference extends es.upm.oeg.librairy.api.facade.model.avro.TextReference{
+
+    private static final Logger LOG = LoggerFactory.getLogger(TextReference.class);
 
     public TextReference(es.upm.oeg.librairy.api.facade.model.avro.TextReference textReference){
         try {
@@ -51,7 +55,18 @@ public class TextReference extends es.upm.oeg.librairy.api.facade.model.avro.Tex
     }
 
     public boolean isValid(){
-        return !Strings.isNullOrEmpty(getContent()) && !Strings.isNullOrEmpty(getModel());
+
+        if (Strings.isNullOrEmpty(getContent())){
+            LOG.warn("Content is empty");
+            return false;
+        }
+
+        if (Strings.isNullOrEmpty(getModel())){
+            LOG.warn("Model is empty");
+            return false;
+        }
+
+        return true;
     }
 
 }

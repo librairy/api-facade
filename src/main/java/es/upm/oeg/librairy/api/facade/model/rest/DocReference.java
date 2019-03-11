@@ -6,6 +6,8 @@ import com.google.common.base.Strings;
 import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -14,6 +16,8 @@ import java.lang.reflect.InvocationTargetException;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DocReference extends es.upm.oeg.librairy.api.facade.model.avro.DocReference{
+
+    private static final Logger LOG = LoggerFactory.getLogger(DocReference.class);
 
     public DocReference(es.upm.oeg.librairy.api.facade.model.avro.DocReference docReference){
         try {
@@ -45,7 +49,12 @@ public class DocReference extends es.upm.oeg.librairy.api.facade.model.avro.DocR
     }
 
     public boolean isValid(){
-        return !Strings.isNullOrEmpty(getId());
+        if (Strings.isNullOrEmpty(getId())){
+            LOG.warn("DocReference ID is empty");
+            return false;
+        }
+
+        return true;
     }
 
 }

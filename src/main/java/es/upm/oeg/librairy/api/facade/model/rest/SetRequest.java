@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
 import org.librairy.service.ApiModelPropertyExtended;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -14,6 +16,8 @@ import java.lang.reflect.InvocationTargetException;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SetRequest extends es.upm.oeg.librairy.api.facade.model.avro.SetRequest{
+
+    private static final Logger LOG = LoggerFactory.getLogger(SetRequest.class);
 
     public SetRequest(es.upm.oeg.librairy.api.facade.model.avro.SetRequest setRequest){
         try {
@@ -55,10 +59,16 @@ public class SetRequest extends es.upm.oeg.librairy.api.facade.model.avro.SetReq
     }
 
     public boolean isValid(){
-        if (get("reference") == null) return false;
+        if (get("reference") == null) {
+            LOG.warn("Reference is empty");
+            return false;
+        }
         if (!getReference().isValid()) return false;
 
-        if (get("dataSource") == null) return false;
+        if (get("dataSource") == null) {
+            LOG.warn("Data Source is empty");
+            return false;
+        }
         if (!getDataSource().isValid()) return false;
 
         return true;

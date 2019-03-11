@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
 import org.librairy.service.ApiModelPropertyExtended;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -15,6 +17,8 @@ import java.lang.reflect.InvocationTargetException;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AnnotationsRequest extends es.upm.oeg.librairy.api.facade.model.avro.AnnotationsRequest{
+
+    private static final Logger LOG = LoggerFactory.getLogger(AnnotationsRequest.class);
 
     public AnnotationsRequest(es.upm.oeg.librairy.api.facade.model.avro.AnnotationsRequest annotationsRequest){
         try {
@@ -63,13 +67,25 @@ public class AnnotationsRequest extends es.upm.oeg.librairy.api.facade.model.avr
 
     public boolean isValid(){
 
-        if (Strings.isNullOrEmpty(getModelEndpoint())) return false;
-        if (Strings.isNullOrEmpty(getContactEmail())) return false;
+        if (Strings.isNullOrEmpty(getModelEndpoint())) {
+            LOG.warn("Model Endpoint is empty");
+            return false;
+        }
+        if (Strings.isNullOrEmpty(getContactEmail())){
+            LOG.warn("Contact Email is empty");
+            return false;
+        }
 
-        if (get("dataSource") == null) return false;
+        if (get("dataSource") == null) {
+            LOG.warn("DataSource is empty");
+            return false;
+        }
         if (!getDataSource().isValid()) return false;
 
-        if (get("dataSink") == null) return false;
+        if (get("dataSink") == null) {
+            LOG.warn("Data Sink is empty");
+            return false;
+        }
         if (!getDataSink().isValid()) return false;
 
         return true;

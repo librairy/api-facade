@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
 import org.librairy.service.ApiModelPropertyExtended;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -16,6 +18,9 @@ import java.lang.reflect.InvocationTargetException;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DataSink extends es.upm.oeg.librairy.api.facade.model.avro.DataSink{
+
+    private static final Logger LOG = LoggerFactory.getLogger(DataSink.class);
+
 
     public DataSink(es.upm.oeg.librairy.api.facade.model.avro.DataSink datasink){
         try {
@@ -55,7 +60,10 @@ public class DataSink extends es.upm.oeg.librairy.api.facade.model.avro.DataSink
     }
 
     public boolean isValid(){
-        if (Strings.isNullOrEmpty(getUrl())) return false;
+        if (Strings.isNullOrEmpty(getUrl())) {
+            LOG.warn("Data Sink URL is empty");
+            return false;
+        }
         return true;
     }
 

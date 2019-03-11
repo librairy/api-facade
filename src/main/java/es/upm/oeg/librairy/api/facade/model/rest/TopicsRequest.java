@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
 import org.librairy.service.ApiModelPropertyExtended;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
@@ -16,6 +18,8 @@ import java.util.Map;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TopicsRequest extends es.upm.oeg.librairy.api.facade.model.avro.TopicsRequest{
+
+    private static final Logger LOG = LoggerFactory.getLogger(TopicsRequest.class);
 
     public TopicsRequest(es.upm.oeg.librairy.api.facade.model.avro.TopicsRequest topicsRequest){
         try {
@@ -82,11 +86,23 @@ public class TopicsRequest extends es.upm.oeg.librairy.api.facade.model.avro.Top
 
     public boolean isValid(){
 
-        if (Strings.isNullOrEmpty(getName())) return false;
-        if (Strings.isNullOrEmpty(getContactEmail())) return false;
-        if (Strings.isNullOrEmpty(getVersion())) return false;
+        if (Strings.isNullOrEmpty(getName())){
+            LOG.warn("Name is empty");
+            return false;
+        }
+        if (Strings.isNullOrEmpty(getContactEmail())) {
+            LOG.warn("Contact Email is empty");
+            return false;
+        }
+        if (Strings.isNullOrEmpty(getVersion())) {
+            LOG.warn("Version is empty");
+            return false;
+        }
 
-        if (get("dataSource") == null) return false;
+        if (get("dataSource") == null) {
+            LOG.warn("Data Source is empty");
+            return false;
+        }
         if (!getDataSource().isValid()) return false;
 
         return true;

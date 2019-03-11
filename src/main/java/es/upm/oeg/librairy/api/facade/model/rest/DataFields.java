@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
 import org.librairy.service.ApiModelPropertyExtended;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -16,6 +18,9 @@ import java.util.List;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DataFields extends es.upm.oeg.librairy.api.facade.model.avro.DataFields{
+
+    private static final Logger LOG = LoggerFactory.getLogger(DataFields.class);
+
 
     public DataFields(es.upm.oeg.librairy.api.facade.model.avro.DataFields dataFields){
         try {
@@ -71,10 +76,10 @@ public class DataFields extends es.upm.oeg.librairy.api.facade.model.avro.DataFi
 
     public boolean isValid(){
 
-        if (Strings.isNullOrEmpty(getId())) return false;
-
-        if (get("text") == null) return false;
-        if (getText().isEmpty()) return false;
+        if (Strings.isNullOrEmpty(getId())){
+            LOG.warn("Data Field ID is empty");
+            return false;
+        }
 
         return true;
     }
