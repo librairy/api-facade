@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
@@ -43,8 +44,8 @@ public class CommunicationTest {
             }
 
             @Override
-            public Set createSet(SetRequest request) throws AvroRemoteException {
-                return Set.newBuilder().setItems(Collections.emptyList()).build();
+            public List<Item> createItems(ItemsRequest request) throws AvroRemoteException {
+                return Collections.emptyList();
             }
 
             @Override
@@ -109,7 +110,7 @@ public class CommunicationTest {
                 )
                 .build());
 
-        client.createSet(SetRequest.newBuilder()
+        client.createItems(ItemsRequest.newBuilder()
                 .setReference(
                         Reference.newBuilder()
                                 .setDocument(

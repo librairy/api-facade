@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.util.List;
 
 /**
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
@@ -56,10 +57,10 @@ public class AvroClient {
         return result;
     }
 
-    public Set createSet(SetRequest request) throws AvroRemoteException {
+    public List<Item> createItems(ItemsRequest request) throws AvroRemoteException {
 
-        LOG.debug("Calling proxy.createSet");
-        Set result= proxy.createSet(request);
+        LOG.debug("Calling proxy.createItems");
+        List<Item> result= proxy.createItems(request);
         LOG.debug("Result: " + result);
         return result;
     }

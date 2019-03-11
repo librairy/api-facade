@@ -6,8 +6,8 @@
 package es.upm.oeg.librairy.api.facade.model.avro;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class SetRequest extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SetRequest\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"reference\",\"type\":{\"type\":\"record\",\"name\":\"Reference\",\"fields\":[{\"name\":\"document\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DocReference\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}],\"default\":null},{\"name\":\"text\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"TextReference\",\"fields\":[{\"name\":\"content\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"model\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}],\"default\":null}]}},{\"name\":\"size\",\"type\":\"int\",\"default\":10},{\"name\":\"dataSource\",\"type\":{\"type\":\"record\",\"name\":\"DataSource\",\"fields\":[{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"format\",\"type\":{\"type\":\"enum\",\"name\":\"ReaderFormat\",\"symbols\":[\"SOLR_CORE\",\"CSV\",\"CSV_TAR_GZ\",\"JSONL\",\"JSONL_TAR_GZ\"]}},{\"name\":\"filter\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"size\",\"type\":\"long\",\"default\":-1},{\"name\":\"offset\",\"type\":\"long\",\"default\":0},{\"name\":\"cache\",\"type\":\"boolean\",\"default\":false},{\"name\":\"credentials\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Credentials\",\"fields\":[{\"name\":\"user\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"password\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"apikey\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null},{\"name\":\"dataFields\",\"type\":{\"type\":\"record\",\"name\":\"DataFields\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"labels\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"text\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]}]}}]}}]}");
+public class ItemsRequest extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ItemsRequest\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"reference\",\"type\":{\"type\":\"record\",\"name\":\"Reference\",\"fields\":[{\"name\":\"document\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DocReference\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}],\"default\":null},{\"name\":\"text\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"TextReference\",\"fields\":[{\"name\":\"content\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"model\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}],\"default\":null}]}},{\"name\":\"size\",\"type\":\"int\",\"default\":10},{\"name\":\"dataSource\",\"type\":{\"type\":\"record\",\"name\":\"DataSource\",\"fields\":[{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"format\",\"type\":{\"type\":\"enum\",\"name\":\"ReaderFormat\",\"symbols\":[\"SOLR_CORE\",\"CSV\",\"CSV_TAR_GZ\",\"JSONL\",\"JSONL_TAR_GZ\"]}},{\"name\":\"filter\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"size\",\"type\":\"long\",\"default\":-1},{\"name\":\"offset\",\"type\":\"long\",\"default\":0},{\"name\":\"cache\",\"type\":\"boolean\",\"default\":false},{\"name\":\"credentials\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Credentials\",\"fields\":[{\"name\":\"user\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"password\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"apikey\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null},{\"name\":\"dataFields\",\"type\":{\"type\":\"record\",\"name\":\"DataFields\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"labels\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"text\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]}]}}]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private es.upm.oeg.librairy.api.facade.model.avro.Reference reference;
    private int size;
@@ -18,12 +18,12 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>. 
    */
-  public SetRequest() {}
+  public ItemsRequest() {}
 
   /**
    * All-args constructor.
    */
-  public SetRequest(es.upm.oeg.librairy.api.facade.model.avro.Reference reference, java.lang.Integer size, es.upm.oeg.librairy.api.facade.model.avro.DataSource dataSource) {
+  public ItemsRequest(es.upm.oeg.librairy.api.facade.model.avro.Reference reference, java.lang.Integer size, es.upm.oeg.librairy.api.facade.model.avro.DataSource dataSource) {
     this.reference = reference;
     this.size = size;
     this.dataSource = dataSource;
@@ -95,26 +95,26 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
     this.dataSource = value;
   }
 
-  /** Creates a new SetRequest RecordBuilder */
-  public static es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder newBuilder() {
-    return new es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder();
+  /** Creates a new ItemsRequest RecordBuilder */
+  public static es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder newBuilder() {
+    return new es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder();
   }
   
-  /** Creates a new SetRequest RecordBuilder by copying an existing Builder */
-  public static es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder other) {
-    return new es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder(other);
+  /** Creates a new ItemsRequest RecordBuilder by copying an existing Builder */
+  public static es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder other) {
+    return new es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder(other);
   }
   
-  /** Creates a new SetRequest RecordBuilder by copying an existing SetRequest instance */
-  public static es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.SetRequest other) {
-    return new es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder(other);
+  /** Creates a new ItemsRequest RecordBuilder by copying an existing ItemsRequest instance */
+  public static es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder newBuilder(es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest other) {
+    return new es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder(other);
   }
   
   /**
-   * RecordBuilder for SetRequest instances.
+   * RecordBuilder for ItemsRequest instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<SetRequest>
-    implements org.apache.avro.data.RecordBuilder<SetRequest> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<ItemsRequest>
+    implements org.apache.avro.data.RecordBuilder<ItemsRequest> {
 
     private es.upm.oeg.librairy.api.facade.model.avro.Reference reference;
     private int size;
@@ -122,11 +122,11 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
 
     /** Creates a new Builder */
     private Builder() {
-      super(es.upm.oeg.librairy.api.facade.model.avro.SetRequest.SCHEMA$);
+      super(es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder other) {
+    private Builder(es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.reference)) {
         this.reference = data().deepCopy(fields()[0].schema(), other.reference);
@@ -142,9 +142,9 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
       }
     }
     
-    /** Creates a Builder by copying an existing SetRequest instance */
-    private Builder(es.upm.oeg.librairy.api.facade.model.avro.SetRequest other) {
-            super(es.upm.oeg.librairy.api.facade.model.avro.SetRequest.SCHEMA$);
+    /** Creates a Builder by copying an existing ItemsRequest instance */
+    private Builder(es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest other) {
+            super(es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.SCHEMA$);
       if (isValidValue(fields()[0], other.reference)) {
         this.reference = data().deepCopy(fields()[0].schema(), other.reference);
         fieldSetFlags()[0] = true;
@@ -165,7 +165,7 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Sets the value of the 'reference' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder setReference(es.upm.oeg.librairy.api.facade.model.avro.Reference value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder setReference(es.upm.oeg.librairy.api.facade.model.avro.Reference value) {
       validate(fields()[0], value);
       this.reference = value;
       fieldSetFlags()[0] = true;
@@ -178,7 +178,7 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Clears the value of the 'reference' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder clearReference() {
+    public es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder clearReference() {
       reference = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -190,7 +190,7 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Sets the value of the 'size' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder setSize(int value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder setSize(int value) {
       validate(fields()[1], value);
       this.size = value;
       fieldSetFlags()[1] = true;
@@ -203,7 +203,7 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Clears the value of the 'size' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder clearSize() {
+    public es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder clearSize() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -214,7 +214,7 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Sets the value of the 'dataSource' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder setDataSource(es.upm.oeg.librairy.api.facade.model.avro.DataSource value) {
+    public es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder setDataSource(es.upm.oeg.librairy.api.facade.model.avro.DataSource value) {
       validate(fields()[2], value);
       this.dataSource = value;
       fieldSetFlags()[2] = true;
@@ -227,16 +227,16 @@ public class SetRequest extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Clears the value of the 'dataSource' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.SetRequest.Builder clearDataSource() {
+    public es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest.Builder clearDataSource() {
       dataSource = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
     @Override
-    public SetRequest build() {
+    public ItemsRequest build() {
       try {
-        SetRequest record = new SetRequest();
+        ItemsRequest record = new ItemsRequest();
         record.reference = fieldSetFlags()[0] ? this.reference : (es.upm.oeg.librairy.api.facade.model.avro.Reference) defaultValue(fields()[0]);
         record.size = fieldSetFlags()[1] ? this.size : (java.lang.Integer) defaultValue(fields()[1]);
         record.dataSource = fieldSetFlags()[2] ? this.dataSource : (es.upm.oeg.librairy.api.facade.model.avro.DataSource) defaultValue(fields()[2]);

@@ -42,7 +42,7 @@
       {"name":"document",  "type":["null","DocReference"], "default": null},
       {"name":"text", "type":["null","TextReference"], "default": null}
     ]},
-    {"name": "SetRequest", "type": "record", "fields": [
+    {"name": "ItemsRequest", "type": "record", "fields": [
       {"name":"reference", "type": "Reference"},
       {"name":"size","type":"int", "default": 10},
       {"name":"dataSource","type":"DataSource"}
@@ -74,9 +74,6 @@
       {"name":"uri", "type":["null","string"], "default": null},
       {"name":"score","type": "double"}
     ]},
-    {"name": "Set", "type": "record", "fields": [
-      {"name":"items","type":{"type" : "array","items":"Item"}, "default": []}
-    ]},
     {"name": "Task", "type": "record", "fields": [
       {"name":"date", "type": "string"},
       {"name":"status","type":"string"},
@@ -97,9 +94,9 @@
         "request": [{"name": "request", "type": "DocumentsRequest"}],
         "response": "Task"
       },
-      "createSet": {
-        "request": [{"name": "request", "type": "SetRequest"}],
-        "response": "Set"
+      "createItems": {
+        "request": [{"name": "request", "type": "ItemsRequest"}],
+        "response": {"type" : "array","items":"Item"}
       },
       "cleanCache": {
         "request": [],

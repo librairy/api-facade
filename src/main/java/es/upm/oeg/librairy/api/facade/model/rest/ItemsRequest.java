@@ -15,13 +15,13 @@ import java.lang.reflect.InvocationTargetException;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SetRequest extends es.upm.oeg.librairy.api.facade.model.avro.SetRequest{
+public class ItemsRequest extends es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest{
 
-    private static final Logger LOG = LoggerFactory.getLogger(SetRequest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ItemsRequest.class);
 
-    public SetRequest(es.upm.oeg.librairy.api.facade.model.avro.SetRequest setRequest){
+    public ItemsRequest(es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest itemsRequest){
         try {
-            BeanUtils.copyProperties(this,setRequest);
+            BeanUtils.copyProperties(this,itemsRequest);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
@@ -29,7 +29,7 @@ public class SetRequest extends es.upm.oeg.librairy.api.facade.model.avro.SetReq
         }
     }
 
-    public SetRequest(){}
+    public ItemsRequest(){}
 
     @Override
     @ApiModelProperty(hidden = true)
