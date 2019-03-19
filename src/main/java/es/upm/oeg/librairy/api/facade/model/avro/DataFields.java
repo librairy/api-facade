@@ -7,12 +7,13 @@ package es.upm.oeg.librairy.api.facade.model.avro;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DataFields extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DataFields\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"labels\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"text\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DataFields\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"labels\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"text\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"extra\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private java.lang.String id;
    private java.lang.String name;
    private java.util.List<java.lang.String> labels;
    private java.util.List<java.lang.String> text;
+   private java.util.List<java.lang.String> extra;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -24,11 +25,12 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * All-args constructor.
    */
-  public DataFields(java.lang.String id, java.lang.String name, java.util.List<java.lang.String> labels, java.util.List<java.lang.String> text) {
+  public DataFields(java.lang.String id, java.lang.String name, java.util.List<java.lang.String> labels, java.util.List<java.lang.String> text, java.util.List<java.lang.String> extra) {
     this.id = id;
     this.name = name;
     this.labels = labels;
     this.text = text;
+    this.extra = extra;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -39,6 +41,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     case 1: return name;
     case 2: return labels;
     case 3: return text;
+    case 4: return extra;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -50,6 +53,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     case 1: name = (java.lang.String)value$; break;
     case 2: labels = (java.util.List<java.lang.String>)value$; break;
     case 3: text = (java.util.List<java.lang.String>)value$; break;
+    case 4: extra = (java.util.List<java.lang.String>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -114,6 +118,21 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     this.text = value;
   }
 
+  /**
+   * Gets the value of the 'extra' field.
+   */
+  public java.util.List<java.lang.String> getExtra() {
+    return extra;
+  }
+
+  /**
+   * Sets the value of the 'extra' field.
+   * @param value the value to set.
+   */
+  public void setExtra(java.util.List<java.lang.String> value) {
+    this.extra = value;
+  }
+
   /** Creates a new DataFields RecordBuilder */
   public static es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder newBuilder() {
     return new es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder();
@@ -139,6 +158,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
     private java.lang.String name;
     private java.util.List<java.lang.String> labels;
     private java.util.List<java.lang.String> text;
+    private java.util.List<java.lang.String> extra;
 
     /** Creates a new Builder */
     private Builder() {
@@ -164,6 +184,10 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
         this.text = data().deepCopy(fields()[3].schema(), other.text);
         fieldSetFlags()[3] = true;
       }
+      if (isValidValue(fields()[4], other.extra)) {
+        this.extra = data().deepCopy(fields()[4].schema(), other.extra);
+        fieldSetFlags()[4] = true;
+      }
     }
     
     /** Creates a Builder by copying an existing DataFields instance */
@@ -184,6 +208,10 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
       if (isValidValue(fields()[3], other.text)) {
         this.text = data().deepCopy(fields()[3].schema(), other.text);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.extra)) {
+        this.extra = data().deepCopy(fields()[4].schema(), other.extra);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -287,6 +315,31 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
       return this;
     }
 
+    /** Gets the value of the 'extra' field */
+    public java.util.List<java.lang.String> getExtra() {
+      return extra;
+    }
+    
+    /** Sets the value of the 'extra' field */
+    public es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder setExtra(java.util.List<java.lang.String> value) {
+      validate(fields()[4], value);
+      this.extra = value;
+      fieldSetFlags()[4] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'extra' field has been set */
+    public boolean hasExtra() {
+      return fieldSetFlags()[4];
+    }
+    
+    /** Clears the value of the 'extra' field */
+    public es.upm.oeg.librairy.api.facade.model.avro.DataFields.Builder clearExtra() {
+      extra = null;
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
     @Override
     public DataFields build() {
       try {
@@ -295,6 +348,7 @@ public class DataFields extends org.apache.avro.specific.SpecificRecordBase impl
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.String) defaultValue(fields()[1]);
         record.labels = fieldSetFlags()[2] ? this.labels : (java.util.List<java.lang.String>) defaultValue(fields()[2]);
         record.text = fieldSetFlags()[3] ? this.text : (java.util.List<java.lang.String>) defaultValue(fields()[3]);
+        record.extra = fieldSetFlags()[4] ? this.extra : (java.util.List<java.lang.String>) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

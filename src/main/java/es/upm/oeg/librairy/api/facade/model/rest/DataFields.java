@@ -34,8 +34,8 @@ public class DataFields extends es.upm.oeg.librairy.api.facade.model.avro.DataFi
 
     public DataFields(){}
 
-    public DataFields(String id, String name, List<String> labels, List<String> text) {
-        super(id, name, labels, text);
+    public DataFields(String id, String name, List<String> labels, List<String> text, List<String> extra) {
+        super(id, name, labels, text, extra);
     }
 
     @Override
@@ -71,6 +71,13 @@ public class DataFields extends es.upm.oeg.librairy.api.facade.model.avro.DataFi
     @ApiModelPropertyExtended(defaultValue = "content, description, title")
     public List<String> getText() {
         return super.getText();
+    }
+
+    @Override
+    @ApiModelProperty(value = "extra data")
+    @ApiModelPropertyExtended(defaultValue = "extended fields")
+    public List<String> getExtra() {
+        return super.getExtra();
     }
 
 
