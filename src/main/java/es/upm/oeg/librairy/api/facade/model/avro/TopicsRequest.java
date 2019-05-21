@@ -7,7 +7,7 @@ package es.upm.oeg.librairy.api.facade.model.avro;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TopicsRequest\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"contactEmail\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"created by librAIry\"},{\"name\":\"version\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"1.0\"},{\"name\":\"parameters\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"},\"default\":{}},{\"name\":\"annotate\",\"type\":\"boolean\",\"default\":false},{\"name\":\"dataSource\",\"type\":{\"type\":\"record\",\"name\":\"DataSource\",\"fields\":[{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"format\",\"type\":{\"type\":\"enum\",\"name\":\"ReaderFormat\",\"symbols\":[\"SOLR_CORE\",\"CSV\",\"CSV_TAR_GZ\",\"JSONL\",\"JSONL_TAR_GZ\"]}},{\"name\":\"filter\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"size\",\"type\":\"long\",\"default\":-1},{\"name\":\"offset\",\"type\":\"long\",\"default\":0},{\"name\":\"cache\",\"type\":\"boolean\",\"default\":false},{\"name\":\"credentials\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Credentials\",\"fields\":[{\"name\":\"user\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"password\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"apikey\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null},{\"name\":\"dataFields\",\"type\":{\"type\":\"record\",\"name\":\"DataFields\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"labels\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"text\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"extra\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]}]}}]}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TopicsRequest\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"contactEmail\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"created by librAIry\"},{\"name\":\"version\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"1.0\"},{\"name\":\"parameters\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"},\"default\":{}},{\"name\":\"annotate\",\"type\":\"boolean\",\"default\":false},{\"name\":\"dataSource\",\"type\":{\"type\":\"record\",\"name\":\"DataSource\",\"fields\":[{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"format\",\"type\":{\"type\":\"enum\",\"name\":\"ReaderFormat\",\"symbols\":[\"SOLR_CORE\",\"CSV\",\"CSV_TAR_GZ\",\"JSONL\",\"JSONL_TAR_GZ\"]}},{\"name\":\"filter\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"size\",\"type\":\"long\",\"default\":-1},{\"name\":\"offset\",\"type\":\"long\",\"default\":0},{\"name\":\"cache\",\"type\":\"boolean\",\"default\":false},{\"name\":\"credentials\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Credentials\",\"fields\":[{\"name\":\"user\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"password\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"apikey\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null},{\"name\":\"dataFields\",\"type\":{\"type\":\"record\",\"name\":\"DataFields\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"labels\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"text\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]},{\"name\":\"extra\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":[]}]}}]}},{\"name\":\"docker\",\"type\":{\"type\":\"record\",\"name\":\"Docker\",\"fields\":[{\"name\":\"user\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"password\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"repository\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private java.lang.String contactEmail;
    private java.lang.String name;
@@ -16,6 +16,7 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
    private java.util.Map<java.lang.String,java.lang.String> parameters;
    private boolean annotate;
    private es.upm.oeg.librairy.api.facade.model.avro.DataSource dataSource;
+   private es.upm.oeg.librairy.api.facade.model.avro.Docker docker;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -27,7 +28,7 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
   /**
    * All-args constructor.
    */
-  public TopicsRequest(java.lang.String contactEmail, java.lang.String name, java.lang.String description, java.lang.String version, java.util.Map<java.lang.String,java.lang.String> parameters, java.lang.Boolean annotate, es.upm.oeg.librairy.api.facade.model.avro.DataSource dataSource) {
+  public TopicsRequest(java.lang.String contactEmail, java.lang.String name, java.lang.String description, java.lang.String version, java.util.Map<java.lang.String,java.lang.String> parameters, java.lang.Boolean annotate, es.upm.oeg.librairy.api.facade.model.avro.DataSource dataSource, es.upm.oeg.librairy.api.facade.model.avro.Docker docker) {
     this.contactEmail = contactEmail;
     this.name = name;
     this.description = description;
@@ -35,6 +36,7 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
     this.parameters = parameters;
     this.annotate = annotate;
     this.dataSource = dataSource;
+    this.docker = docker;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -48,6 +50,7 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
     case 4: return parameters;
     case 5: return annotate;
     case 6: return dataSource;
+    case 7: return docker;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -62,6 +65,7 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
     case 4: parameters = (java.util.Map<java.lang.String,java.lang.String>)value$; break;
     case 5: annotate = (java.lang.Boolean)value$; break;
     case 6: dataSource = (es.upm.oeg.librairy.api.facade.model.avro.DataSource)value$; break;
+    case 7: docker = (es.upm.oeg.librairy.api.facade.model.avro.Docker)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -171,6 +175,21 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
     this.dataSource = value;
   }
 
+  /**
+   * Gets the value of the 'docker' field.
+   */
+  public es.upm.oeg.librairy.api.facade.model.avro.Docker getDocker() {
+    return docker;
+  }
+
+  /**
+   * Sets the value of the 'docker' field.
+   * @param value the value to set.
+   */
+  public void setDocker(es.upm.oeg.librairy.api.facade.model.avro.Docker value) {
+    this.docker = value;
+  }
+
   /** Creates a new TopicsRequest RecordBuilder */
   public static es.upm.oeg.librairy.api.facade.model.avro.TopicsRequest.Builder newBuilder() {
     return new es.upm.oeg.librairy.api.facade.model.avro.TopicsRequest.Builder();
@@ -199,6 +218,7 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
     private java.util.Map<java.lang.String,java.lang.String> parameters;
     private boolean annotate;
     private es.upm.oeg.librairy.api.facade.model.avro.DataSource dataSource;
+    private es.upm.oeg.librairy.api.facade.model.avro.Docker docker;
 
     /** Creates a new Builder */
     private Builder() {
@@ -236,6 +256,10 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
         this.dataSource = data().deepCopy(fields()[6].schema(), other.dataSource);
         fieldSetFlags()[6] = true;
       }
+      if (isValidValue(fields()[7], other.docker)) {
+        this.docker = data().deepCopy(fields()[7].schema(), other.docker);
+        fieldSetFlags()[7] = true;
+      }
     }
     
     /** Creates a Builder by copying an existing TopicsRequest instance */
@@ -268,6 +292,10 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
       if (isValidValue(fields()[6], other.dataSource)) {
         this.dataSource = data().deepCopy(fields()[6].schema(), other.dataSource);
         fieldSetFlags()[6] = true;
+      }
+      if (isValidValue(fields()[7], other.docker)) {
+        this.docker = data().deepCopy(fields()[7].schema(), other.docker);
+        fieldSetFlags()[7] = true;
       }
     }
 
@@ -445,6 +473,31 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
       return this;
     }
 
+    /** Gets the value of the 'docker' field */
+    public es.upm.oeg.librairy.api.facade.model.avro.Docker getDocker() {
+      return docker;
+    }
+    
+    /** Sets the value of the 'docker' field */
+    public es.upm.oeg.librairy.api.facade.model.avro.TopicsRequest.Builder setDocker(es.upm.oeg.librairy.api.facade.model.avro.Docker value) {
+      validate(fields()[7], value);
+      this.docker = value;
+      fieldSetFlags()[7] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'docker' field has been set */
+    public boolean hasDocker() {
+      return fieldSetFlags()[7];
+    }
+    
+    /** Clears the value of the 'docker' field */
+    public es.upm.oeg.librairy.api.facade.model.avro.TopicsRequest.Builder clearDocker() {
+      docker = null;
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
     @Override
     public TopicsRequest build() {
       try {
@@ -456,6 +509,7 @@ public class TopicsRequest extends org.apache.avro.specific.SpecificRecordBase i
         record.parameters = fieldSetFlags()[4] ? this.parameters : (java.util.Map<java.lang.String,java.lang.String>) defaultValue(fields()[4]);
         record.annotate = fieldSetFlags()[5] ? this.annotate : (java.lang.Boolean) defaultValue(fields()[5]);
         record.dataSource = fieldSetFlags()[6] ? this.dataSource : (es.upm.oeg.librairy.api.facade.model.avro.DataSource) defaultValue(fields()[6]);
+        record.docker = fieldSetFlags()[7] ? this.docker : (es.upm.oeg.librairy.api.facade.model.avro.Docker) defaultValue(fields()[7]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

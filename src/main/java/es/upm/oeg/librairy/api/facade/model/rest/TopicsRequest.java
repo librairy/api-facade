@@ -6,7 +6,7 @@ import com.google.common.base.Strings;
 import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
-import org.librairy.service.ApiModelPropertyExtended;
+import es.upm.oeg.librairy.service.ApiModelPropertyExtended;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -84,6 +84,12 @@ public class TopicsRequest extends es.upm.oeg.librairy.api.facade.model.avro.Top
         return new DataSource(super.getDataSource());
     }
 
+    @Override
+    @ApiModelProperty(value = "docker-hub credentials")
+    public Docker getDocker() {
+        return new Docker(super.getDocker());
+    }
+
     public boolean isValid(){
 
         if (Strings.isNullOrEmpty(getName())){
@@ -104,6 +110,12 @@ public class TopicsRequest extends es.upm.oeg.librairy.api.facade.model.avro.Top
             return false;
         }
         if (!getDataSource().isValid()) return false;
+
+        if (get("docker") == null) {
+            LOG.warn("Docker credentials are empty");
+            return false;
+        }
+        if (!getDocker().isValid()) return false;
 
         return true;
 

@@ -35,6 +35,12 @@
     {"name": "DocReference", "type": "record", "fields": [
       {"name":"id",  "type":"string"}
     ]},
+    {"name": "Docker", "type": "record", "fields": [
+      {"name":"user", "type": "string"},
+      {"name":"email","type":"string"},
+      {"name":"password","type":"string"},
+      {"name":"repository","type":"string"}
+    ]},
     {"name": "TextReference", "type": "record", "fields": [
       {"name":"content",  "type":"string"},
       {"name":"model",  "type":"string"}
@@ -66,7 +72,8 @@
       {"name":"version", "type": "string", "default": "1.0"},
       {"name":"parameters","type":{"type" : "map","values":"string"}, "default": {}},
       {"name":"annotate", "type":"boolean", "default": false},
-      {"name":"dataSource","type":"DataSource"}
+      {"name":"dataSource","type":"DataSource"},
+      {"name":"docker","type":"Docker"}
     ]},
     {"name": "Item", "type": "record", "fields": [
       {"name":"id", "type": "string"},

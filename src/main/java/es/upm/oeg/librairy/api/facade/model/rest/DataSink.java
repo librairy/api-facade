@@ -7,7 +7,7 @@ import es.upm.oeg.librairy.api.facade.model.avro.WriterFormat;
 import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
-import org.librairy.service.ApiModelPropertyExtended;
+import es.upm.oeg.librairy.service.ApiModelPropertyExtended;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
