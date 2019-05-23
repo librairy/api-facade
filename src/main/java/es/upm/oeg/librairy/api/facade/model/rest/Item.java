@@ -16,7 +16,7 @@ public class Item extends es.upm.oeg.librairy.api.facade.model.avro.Item{
 
     public Item(es.upm.oeg.librairy.api.facade.model.avro.Item item){
         try {
-            BeanUtils.copyProperties(this,item);
+            if (item!=null) BeanUtils.copyProperties(this,item);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

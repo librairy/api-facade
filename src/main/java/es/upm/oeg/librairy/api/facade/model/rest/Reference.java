@@ -20,7 +20,7 @@ public class Reference extends es.upm.oeg.librairy.api.facade.model.avro.Referen
 
     public Reference(es.upm.oeg.librairy.api.facade.model.avro.Reference reference){
         try {
-            BeanUtils.copyProperties(this,reference);
+            if (reference!=null) BeanUtils.copyProperties(this,reference);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

@@ -21,7 +21,7 @@ public class TextReference extends es.upm.oeg.librairy.api.facade.model.avro.Tex
 
     public TextReference(es.upm.oeg.librairy.api.facade.model.avro.TextReference textReference){
         try {
-            BeanUtils.copyProperties(this,textReference);
+            if (textReference!=null) BeanUtils.copyProperties(this,textReference);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

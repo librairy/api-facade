@@ -16,7 +16,7 @@ public class Task extends es.upm.oeg.librairy.api.facade.model.avro.Task{
 
     public Task(es.upm.oeg.librairy.api.facade.model.avro.Task task){
         try {
-            BeanUtils.copyProperties(this,task);
+            if (task!=null) BeanUtils.copyProperties(this,task);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

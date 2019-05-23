@@ -23,7 +23,7 @@ public class DataSource extends es.upm.oeg.librairy.api.facade.model.avro.DataSo
 
     public DataSource(es.upm.oeg.librairy.api.facade.model.avro.DataSource datasource){
         try {
-            BeanUtils.copyProperties(this,datasource);
+            if (datasource!=null) BeanUtils.copyProperties(this,datasource);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

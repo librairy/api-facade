@@ -22,7 +22,7 @@ public class AnnotationsRequest extends es.upm.oeg.librairy.api.facade.model.avr
 
     public AnnotationsRequest(es.upm.oeg.librairy.api.facade.model.avro.AnnotationsRequest annotationsRequest){
         try {
-            BeanUtils.copyProperties(this,annotationsRequest);
+            if (annotationsRequest!=null) BeanUtils.copyProperties(this,annotationsRequest);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

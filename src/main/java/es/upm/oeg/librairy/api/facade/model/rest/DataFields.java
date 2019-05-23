@@ -24,7 +24,7 @@ public class DataFields extends es.upm.oeg.librairy.api.facade.model.avro.DataFi
 
     public DataFields(es.upm.oeg.librairy.api.facade.model.avro.DataFields dataFields){
         try {
-            BeanUtils.copyProperties(this,dataFields);
+            if (dataFields!=null) BeanUtils.copyProperties(this,dataFields);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

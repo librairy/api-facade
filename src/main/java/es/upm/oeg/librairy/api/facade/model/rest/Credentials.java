@@ -17,7 +17,7 @@ public class Credentials extends es.upm.oeg.librairy.api.facade.model.avro.Crede
 
     public Credentials(es.upm.oeg.librairy.api.facade.model.avro.Credentials credentials){
         try {
-            BeanUtils.copyProperties(this,credentials);
+            if (credentials!=null) BeanUtils.copyProperties(this,credentials);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

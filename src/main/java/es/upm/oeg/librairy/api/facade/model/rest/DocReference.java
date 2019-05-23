@@ -21,7 +21,7 @@ public class DocReference extends es.upm.oeg.librairy.api.facade.model.avro.DocR
 
     public DocReference(es.upm.oeg.librairy.api.facade.model.avro.DocReference docReference){
         try {
-            BeanUtils.copyProperties(this,docReference);
+            if (docReference!=null) BeanUtils.copyProperties(this,docReference);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

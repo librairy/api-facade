@@ -21,7 +21,7 @@ public class ItemsRequest extends es.upm.oeg.librairy.api.facade.model.avro.Item
 
     public ItemsRequest(es.upm.oeg.librairy.api.facade.model.avro.ItemsRequest itemsRequest){
         try {
-            BeanUtils.copyProperties(this,itemsRequest);
+            if (itemsRequest!=null) BeanUtils.copyProperties(this,itemsRequest);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

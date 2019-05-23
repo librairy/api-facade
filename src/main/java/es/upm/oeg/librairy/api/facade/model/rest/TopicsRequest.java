@@ -23,7 +23,7 @@ public class TopicsRequest extends es.upm.oeg.librairy.api.facade.model.avro.Top
 
     public TopicsRequest(es.upm.oeg.librairy.api.facade.model.avro.TopicsRequest topicsRequest){
         try {
-            BeanUtils.copyProperties(this,topicsRequest);
+            if (topicsRequest!=null) BeanUtils.copyProperties(this,topicsRequest);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

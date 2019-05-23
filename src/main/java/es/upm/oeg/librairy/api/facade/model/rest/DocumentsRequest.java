@@ -23,7 +23,7 @@ public class DocumentsRequest extends es.upm.oeg.librairy.api.facade.model.avro.
 
     public DocumentsRequest(es.upm.oeg.librairy.api.facade.model.avro.DocumentsRequest documentsRequest){
         try {
-            BeanUtils.copyProperties(this,documentsRequest);
+            if (documentsRequest!=null) BeanUtils.copyProperties(this,documentsRequest);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

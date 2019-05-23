@@ -24,7 +24,7 @@ public class DataSink extends es.upm.oeg.librairy.api.facade.model.avro.DataSink
 
     public DataSink(es.upm.oeg.librairy.api.facade.model.avro.DataSink datasink){
         try {
-            BeanUtils.copyProperties(this,datasink);
+            if (datasink!=null) BeanUtils.copyProperties(this,datasink);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

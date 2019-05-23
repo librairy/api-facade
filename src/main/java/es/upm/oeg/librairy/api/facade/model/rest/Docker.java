@@ -23,7 +23,7 @@ public class Docker extends es.upm.oeg.librairy.api.facade.model.avro.Docker{
 
     public Docker(es.upm.oeg.librairy.api.facade.model.avro.Docker docker){
         try {
-            BeanUtils.copyProperties(this,docker);
+            if (docker!=null) BeanUtils.copyProperties(this,docker);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
