@@ -48,10 +48,4 @@ public class Credentials extends es.upm.oeg.librairy.api.facade.model.avro.Crede
         return super.getPassword();
     }
 
-    @Override
-    @ApiModelProperty(value = "api key")
-    @ApiModelPropertyExtended(defaultValue = "token")
-    public String getApikey() {return super.getApikey();}
-
-
 }

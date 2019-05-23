@@ -7,8 +7,7 @@
     {"name": "WriterFormat", "type": "enum","symbols": ["SOLR_CORE"]},
     {"name": "Credentials", "type": "record", "fields": [
       {"name":"user", "type":["null","string"],"default":null},
-      {"name":"password","type":["null","string"],"default":null},
-      {"name":"apikey","type":["null","string"],"default":null}
+      {"name":"password","type":["null","string"],"default":null}
     ]},
     {"name": "DataFields", "type": "record", "fields": [
       {"name":"id", "type": "string"},

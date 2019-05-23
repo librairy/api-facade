@@ -7,11 +7,10 @@ package es.upm.oeg.librairy.api.facade.model.avro;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Credentials extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Credentials\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"user\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"password\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"apikey\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Credentials\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"fields\":[{\"name\":\"user\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"password\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private java.lang.String user;
    private java.lang.String password;
-   private java.lang.String apikey;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -23,10 +22,9 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * All-args constructor.
    */
-  public Credentials(java.lang.String user, java.lang.String password, java.lang.String apikey) {
+  public Credentials(java.lang.String user, java.lang.String password) {
     this.user = user;
     this.password = password;
-    this.apikey = apikey;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -35,7 +33,6 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     switch (field$) {
     case 0: return user;
     case 1: return password;
-    case 2: return apikey;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -45,7 +42,6 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     switch (field$) {
     case 0: user = (java.lang.String)value$; break;
     case 1: password = (java.lang.String)value$; break;
-    case 2: apikey = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -80,21 +76,6 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
     this.password = value;
   }
 
-  /**
-   * Gets the value of the 'apikey' field.
-   */
-  public java.lang.String getApikey() {
-    return apikey;
-  }
-
-  /**
-   * Sets the value of the 'apikey' field.
-   * @param value the value to set.
-   */
-  public void setApikey(java.lang.String value) {
-    this.apikey = value;
-  }
-
   /** Creates a new Credentials RecordBuilder */
   public static es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder newBuilder() {
     return new es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder();
@@ -118,7 +99,6 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
 
     private java.lang.String user;
     private java.lang.String password;
-    private java.lang.String apikey;
 
     /** Creates a new Builder */
     private Builder() {
@@ -136,10 +116,6 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
         this.password = data().deepCopy(fields()[1].schema(), other.password);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.apikey)) {
-        this.apikey = data().deepCopy(fields()[2].schema(), other.apikey);
-        fieldSetFlags()[2] = true;
-      }
     }
     
     /** Creates a Builder by copying an existing Credentials instance */
@@ -152,10 +128,6 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
       if (isValidValue(fields()[1], other.password)) {
         this.password = data().deepCopy(fields()[1].schema(), other.password);
         fieldSetFlags()[1] = true;
-      }
-      if (isValidValue(fields()[2], other.apikey)) {
-        this.apikey = data().deepCopy(fields()[2].schema(), other.apikey);
-        fieldSetFlags()[2] = true;
       }
     }
 
@@ -209,38 +181,12 @@ public class Credentials extends org.apache.avro.specific.SpecificRecordBase imp
       return this;
     }
 
-    /** Gets the value of the 'apikey' field */
-    public java.lang.String getApikey() {
-      return apikey;
-    }
-    
-    /** Sets the value of the 'apikey' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder setApikey(java.lang.String value) {
-      validate(fields()[2], value);
-      this.apikey = value;
-      fieldSetFlags()[2] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'apikey' field has been set */
-    public boolean hasApikey() {
-      return fieldSetFlags()[2];
-    }
-    
-    /** Clears the value of the 'apikey' field */
-    public es.upm.oeg.librairy.api.facade.model.avro.Credentials.Builder clearApikey() {
-      apikey = null;
-      fieldSetFlags()[2] = false;
-      return this;
-    }
-
     @Override
     public Credentials build() {
       try {
         Credentials record = new Credentials();
         record.user = fieldSetFlags()[0] ? this.user : (java.lang.String) defaultValue(fields()[0]);
         record.password = fieldSetFlags()[1] ? this.password : (java.lang.String) defaultValue(fields()[1]);
-        record.apikey = fieldSetFlags()[2] ? this.apikey : (java.lang.String) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
