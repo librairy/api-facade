@@ -48,6 +48,13 @@ public class DataSource extends es.upm.oeg.librairy.api.facade.model.avro.DataSo
     }
 
     @Override
+    @ApiModelProperty(value = "identifier")
+    @ApiModelPropertyExtended(defaultValue = "sample")
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
     @ApiModelProperty(value = "data format")
     @ApiModelPropertyExtended(defaultValue = "SOLR_CORE")
     public ReaderFormat getFormat() {return super.getFormat();}

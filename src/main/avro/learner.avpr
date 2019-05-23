@@ -18,6 +18,7 @@
     ]},
     {"name": "DataSource", "type": "record", "fields": [
       {"name":"url","type":"string"},
+      {"name":"name","type":"string"},
       {"name":"format","type":"ReaderFormat"},
       {"name":"filter", "type": "string", "default": ""},
       {"name":"size", "type": "long", "default": -1},
