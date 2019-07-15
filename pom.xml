@@ -11,7 +11,7 @@
 
 	<groupId>es.upm.oeg.librairy</groupId>
     <artifactId>librairy-api-facade</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
     <name>librairy-api-facade</name>
     <description>Interfaces for librAIry</description>
