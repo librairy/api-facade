@@ -7,7 +7,7 @@ package es.upm.oeg.librairy.api.facade.model.avro;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public enum ReaderFormat { 
-  SOLR_CORE, CSV, CSV_TAR_GZ, JSONL, JSONL_TAR_GZ  ;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"ReaderFormat\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"symbols\":[\"SOLR_CORE\",\"CSV\",\"CSV_TAR_GZ\",\"JSONL\",\"JSONL_TAR_GZ\"]}");
+  SOLR_CORE, CSV, CSV_TAR_GZ, JSONL, JSONL_TAR_GZ, PDF, DOC, TXT  ;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"ReaderFormat\",\"namespace\":\"es.upm.oeg.librairy.api.facade.model.avro\",\"symbols\":[\"SOLR_CORE\",\"CSV\",\"CSV_TAR_GZ\",\"JSONL\",\"JSONL_TAR_GZ\",\"PDF\",\"DOC\",\"TXT\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 }

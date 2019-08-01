@@ -3,7 +3,7 @@
 
 
   "types": [
-    {"name": "ReaderFormat", "type": "enum","symbols": ["SOLR_CORE","CSV","CSV_TAR_GZ","JSONL","JSONL_TAR_GZ"]},
+    {"name": "ReaderFormat", "type": "enum","symbols": ["SOLR_CORE","CSV","CSV_TAR_GZ","JSONL","JSONL_TAR_GZ","PDF","DOC","TXT"]},
     {"name": "WriterFormat", "type": "enum","symbols": ["SOLR_CORE"]},
     {"name": "Credentials", "type": "record", "fields": [
       {"name":"user", "type":["null","string"],"default":null},
