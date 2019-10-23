@@ -65,6 +65,14 @@ public class AvroClient {
         return result;
     }
 
+    public String createRanks(ItemsRequest request) throws AvroRemoteException {
+
+        LOG.debug("Calling proxy.createRanks");
+        String result= proxy.createRanks(request);
+        LOG.debug("Result: " + result);
+        return result;
+    }
+
 
     public Task cleanCache() throws AvroRemoteException {
 

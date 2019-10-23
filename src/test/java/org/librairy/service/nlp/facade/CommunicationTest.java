@@ -49,6 +49,11 @@ public class CommunicationTest {
             }
 
             @Override
+            public String createRanks(ItemsRequest request) throws AvroRemoteException {
+                return "";
+            }
+
+            @Override
             public Task cleanCache() throws AvroRemoteException {
                 return Task.newBuilder().setDate(new Date().toString()).setStatus("ACCEPTED").setMessage("cache removed").build();
             }
@@ -111,6 +116,29 @@ public class CommunicationTest {
                 .build());
 
         client.createItems(ItemsRequest.newBuilder()
+                .setReference(
+                        Reference.newBuilder()
+                                .setDocument(
+                                        DocReference.newBuilder().setId("docId").build()
+                                ).build()
+                )
+                .setSize(5)
+                .setDataSource(
+                        DataSource.newBuilder()
+                                .setUrl("/src/test/resources/sample.csv")
+                                .setSize(-1)
+                                .setFormat(ReaderFormat.CSV)
+                                .setDataFields(
+                                        DataFields.newBuilder()
+                                                .setId("id")
+                                                .setText(Arrays.asList("title","content"))
+                                                .build()
+                                )
+                                .build()
+                )
+                .build());
+
+        client.createRanks(ItemsRequest.newBuilder()
                 .setReference(
                         Reference.newBuilder()
                                 .setDocument(

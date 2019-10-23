@@ -106,6 +106,10 @@
         "request": [{"name": "request", "type": "ItemsRequest"}],
         "response": {"type" : "array","items":"Item"}
       },
+      "createRanks": {
+        "request": [{"name": "request", "type": "ItemsRequest"}],
+        "response": {"type" : "string"}
+      },
       "cleanCache": {
         "request": [],
         "response": "Task"
